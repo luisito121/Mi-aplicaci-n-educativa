@@ -1,0 +1,212 @@
+/* Fuentes y estilos generales */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to right, #a1c4fd, #c2e9fb); /* Degradado azul claro a morado claro */
+    color: #333;
+}
+
+/* Pantalla de inicio */
+#start-screen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+}
+
+#start-screen h1 {
+    font-size: 3em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Efecto de sombra */
+}
+
+#start-screen p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+#start-btn {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.2em;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+#start-btn:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+
+/* Contenedor de la tabla */
+#table-container {
+    padding: 20px;
+    background: linear-gradient(to bottom, #f0f0f0, #ffffff); /* Degradado gris claro a blanco */
+}
+
+/* Tabla periódica */
+#periodic-table {
+    display: grid;
+    grid-template-columns: repeat(18, minmax(60px, 1fr));
+    grid-template-rows: repeat(9, auto);
+    gap: 2px;
+    max-width: 100%;
+    overflow-x: auto;
+}
+
+.element {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-size: 0.8em;
+}
+
+.element:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.number {
+    font-size: 0.7em;
+    align-self: flex-start;
+}
+
+.symbol {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.name {
+    font-size: 0.7em;
+}
+
+/* Colores por regiones */
+.metales-alcalinos { background-color: #ff9999; }
+.metales-alcalinotérreos { background-color: #ffcc99; }
+.metales-de-transición { background-color: #ffff99; }
+.metales-postransición { background-color: #ccff99; }
+.metaloides { background-color: #99ff99; }
+.no-metales { background-color: #99ffff; }
+.halógenos { background-color: #99ccff; }
+.gases-nobles { background-color: #9999ff; }
+.elementos-de-lantanoide { background-color: #ff99ff; }
+.elementos-de-actinoide { background-color: #ff99cc; }
+.lanthanide-series, .actinide-series { background-color: #eee; font-style: italic; cursor: default; }
+
+/* Modales */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+    transition: opacity 0.3s;
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 80%;
+    max-width: 600px;
+    text-align: center;
+}
+
+.close, .close-quiz {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover, .close-quiz:hover {
+    color: black;
+}
+
+#element-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.modal button {
+    margin: 10px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+#back-to-table {
+    background-color: #2196F3;
+    color: white;
+}
+
+#see-another {
+    background-color: #FFC107;
+    color: white;
+}
+
+#finish-quiz {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.modal button:hover {
+    opacity: 0.9;
+}
+
+/* Quiz */
+#quiz-questions div {
+    margin-bottom: 20px;
+}
+
+#quiz-questions button {
+    display: block;
+    width: 100%;
+    margin: 5px 0;
+    padding: 10px;
+    background: #f0f0f0;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+#quiz-questions button:hover {
+    background: #ddd;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    #periodic-table {
+        grid-template-columns: repeat(18, minmax(40px, 1fr));
+    }
+    .element {
+        font-size: 0.7em;
+    }
+    .symbol {
+        font-size: 1.2em;
+    }
+}
