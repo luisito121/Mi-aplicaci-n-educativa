@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atmosfera Química</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:400,700">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <div id="start-screen">
+        <h1>Atmosfera Química</h1>
+        <p>Aprende química con imágenes 3D y quizzes personalizados</p>
+        <button id="start-btn"><i class="fas fa-atom"></i> Iniciar Aventura Química</button>
+    </div>
+    <div id="table-container" style="display: none;">
+        <div id="periodic-table"></div>
+    </div>
+    <div id="element-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <img id="element-image" src="" alt="Imagen 3D del elemento">
+            <h2 id="element-title"></h2>
+            <p id="element-basic"></p>
+            <h3>¿Qué es este elemento?</h3>
+            <p id="element-summary"></p>
+            <h3>Aplicaciones en la vida real</h3>
+            <p id="element-applications"></p>
+            <button id="back-to-table">Volver a la tabla</button>
+            <button id="see-another">Ver otro elemento</button>
+        </div>
+    </div>
+    <div id="quiz-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-quiz">&times;</span>
+            <h2>Quiz sobre <span id="quiz-element"></span> <i class="fas fa-question-circle"></i></h2>
+            <div id="quiz-questions"></div>
+            <div id="quiz-summary" style="display: none;"></div>
+            <button id="finish-quiz" style="display: none;">Finalizar y volver a la tabla</button>
+        </div>
+    </div>
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
